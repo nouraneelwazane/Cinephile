@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cinephile</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <nav id="header-nav" class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div class="navbar-brand">
+                            <span id="head1">
+                                <a href="index.html"><h1>Cinephile</h1></a>
+                            </span>
+                            <div id="definition">
+                                /ˈsɪnɪfʌɪl/<br>
+                                a person who is <br class="visible-xs">fond of the cinema
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="main-content" class="container">
+            <div id= "head2" class="text-center">
+                <h2>
+                    Action Movies
+                </h2>
+            </div>
+            <div id= "action-movies" class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#" onclick="$dc.loadMoviePage('{{short_name}}');">
+                        <div id="movie-tile">
+                            <img src="./images/baby_driver.jpg" alt="Baby Driver">
+                            <span>Baby Driver</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#" onclick="$dc.loadMoviePage('{{short_name}}');">
+                        <div id="movie-tile">
+                            <img src="./images/jumanji.jpg" alt="Jumanji">
+                            <span>Jumanji</span>
+                        </div>
+                    </a>
+                </div>            
+            </div>
+        </div>
+    </body>
+</html>
