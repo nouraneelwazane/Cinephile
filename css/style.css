@@ -42,6 +42,7 @@ body {
     font-size: 0.8em;
     clear: right;
     color: #808080;
+    overflow:visible;
 }
 
 
@@ -79,5 +80,10 @@ body {
     #main-content{
         margin-left: 10px;
         margin-right: 10px;
+    }
+    
+    #definition{
+        font-size: 0.6em;
+        margin-top: 5px;
     }
 }
