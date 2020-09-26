@@ -12,11 +12,6 @@
     var categoriesTitleHtml = "snippets/genre-header2.html";
 
     // Convenience function for inserting innerHTML for 'select'
-    var insertHeader2Html = function (content) {
-        document.querySelector("h2").textContent = content;
-    };
-
-    // Convenience function for inserting innerHTML for 'select'
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
         targetElem.innerHTML = html;
@@ -42,7 +37,8 @@
     document.addEventListener("DOMContentLoaded", function (event) {
 
         // On first load, show home view
-        insertHeader2Html('Movie Genres');
+        header2Html = '<h2>Movie Genres</h2>';
+        insertHtml('#head2',header2Html);
         loadIndexCategories();
     });
 
