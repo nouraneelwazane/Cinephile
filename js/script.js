@@ -12,6 +12,11 @@
     var categoriesTitleHtml = "snippets/genre-header2.html";
 
     // Convenience function for inserting innerHTML for 'select'
+    var insertHeader2Html = function (content) {
+        document.querySelector("h2").textContent = content;
+    };
+
+    // Convenience function for inserting innerHTML for 'select'
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
         targetElem.innerHTML = html;
@@ -37,6 +42,7 @@
     document.addEventListener("DOMContentLoaded", function (event) {
 
         // On first load, show home view
+        insertHeader2Html('Movie Genres');
         loadIndexCategories();
     });
 
@@ -103,7 +109,7 @@
 
     // Load the menu categories view
     loadIndexCategories = function () {
-        showLoading("#main-content");
+        showLoading("#main-content-content");
         $ajaxUtils.sendGetRequest(
             movie_genres_url,
             buildAndShowMovieGenresHTML);
@@ -115,19 +121,12 @@
     function buildAndShowMovieGenresHTML (categories) {
         // Load title snippet of categories page
         $ajaxUtils.sendGetRequest(
-            index_content_header,
-            function (index_content_header) {
-                // Retrieve single category snippet
-                $ajaxUtils.sendGetRequest(
-                    index_movie_genres,
-                    function (index_movie_genre) {
-                        var categoriesViewHtml =
-                            buildMovieGenresViewHtml(categories,
-                                                     index_content_header,
-                                                     index_movie_genre);
-                        insertHtml("#main-content", categoriesViewHtml);
-                    },
-                    false);
+            index_movie_genres,
+            function (index_movie_genre) {
+                var categoriesViewHtml =
+                    buildMovieGenresViewHtml(categories,
+                                             index_movie_genre);
+                insertHtml("#main-content-content", categoriesViewHtml);
             },
             false);
     }
@@ -136,11 +135,9 @@
     // Using categories data and snippets html
     // build categories view HTML to be inserted into page
     function buildMovieGenresViewHtml(categories,
-                                       index_content_header,
                                        index_movie_genre) {
 
-        var finalHtml = index_content_header;
-        finalHtml += "<div id='movie-genres' class='row'>";
+        var finalHtml = '';
         // Loop over categories
         for (var i = 0; i < categories.length; i++) {
             // Insert category values
@@ -155,8 +152,6 @@
                                short_name);
             finalHtml += html;
         }
-
-        finalHtml += "</div>";
         return finalHtml;
     }
 
