@@ -1,0 +1,14 @@
+[
+    {"name":"Action", "short_name":"action"},
+    {"name":"Animation", "short_name":"animation"},
+    {"name":"Biography", "short_name":"biography"},
+    {"name":"Comedy", "short_name":"comedy"},
+    {"name":"Documentary", "short_name":"documentary"},
+    {"name":"Drama", "short_name":"drama"},
+    {"name":"Fantasy", "short_name":"fantasy"},
+    {"name":"Film-Noir", "short_name":"film-noir"},
+    {"name":"Horror", "short_name":"horror"},
+    {"name":"Romance", "short_name":"romance"},
+    {"name":"Science Fiction", "short_name":"science-fiction"},
+    {"name":"Thriller", "short_name":"thriller"}
+]
