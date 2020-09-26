@@ -44,7 +44,9 @@
 
     // Load the menu categories view
     cinephile.loadGenreMovies= function (name, short_name) {
-        showLoading("#main-content");
+        header2Html = '<h2>'+ name +' Movies</h2>';
+        insertHtml('#head2',header2Html);
+        showLoading("#main-content-content");
         allCategoriesUrl +=short_name;
         allCategoriesUrl +=".json"
         $ajaxUtils.sendGetRequest(
@@ -55,20 +57,15 @@
     // from the server
     function buildAndShowCategoriesHTML (categories) {
         // Load title snippet of categories page
+        // Retrieve single category snippet
         $ajaxUtils.sendGetRequest(
-            categoriesTitleHtml,
-            function (categoriesTitleHtml) {
-                // Retrieve single category snippet
-                $ajaxUtils.sendGetRequest(
-                    categoryHtml,
-                    function (categoryHtml) {
-                        var categoriesViewHtml =
-                            buildCategoriesViewHtml(categories,
-                                                    categoriesTitleHtml,
-                                                    categoryHtml);
-                        insertHtml("#main-content", categoriesViewHtml);
-                    },
-                    false);
+            categoryHtml,
+            function (categoryHtml) {
+                var categoriesViewHtml =
+                    buildCategoriesViewHtml(categories,
+                                            categoriesTitleHtml,
+                                            categoryHtml);
+                insertHtml("#main-content-content", categoriesViewHtml);
             },
             false);
     }
@@ -80,8 +77,7 @@
                                       categoriesTitleHtml,
                                       categoryHtml) {
 
-        var finalHtml = categoriesTitleHtml;
-        finalHtml += "<section class='row'>";
+        var finalHtml = '';
 
         // Loop over categories
         for (var i = 0; i < categories.length; i++) {
@@ -98,7 +94,6 @@
             finalHtml += html;
         }
 
-        finalHtml += "</section>";
         return finalHtml;
     }
 
