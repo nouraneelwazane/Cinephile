@@ -9,6 +9,9 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+a{
+    color: black;
+}
 
 /** HEADER **/
 
@@ -76,8 +79,8 @@ body {
 
 a:hover, a:focus {
     text-decoration: none;
+    color: black;
 }
-
 
 #movie-tile{
     height: 400px;
