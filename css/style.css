@@ -10,7 +10,7 @@ body {
 }
 
 a{
-    color: black;
+    color: inherit;
 }
 
 /** HEADER **/
@@ -79,7 +79,7 @@ a{
 
 a:hover, a:focus {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 
 #movie-tile{
