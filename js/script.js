@@ -85,12 +85,22 @@
             var html = categoryHtml;
             var name = "" + categories[i].name;
             var short_name = categories[i].short_name;
+            var overview = categories[i].overview;
+            var trailer = categories[i].trailer; 
             html =
                 insertProperty(html, "name", name);
             html =
                 insertProperty(html,
                                "short_name",
                                short_name);
+            html =
+                insertProperty(html,
+                               "overview",
+                               overview);
+            html =
+                insertProperty(html,
+                               "trailer",
+                               trailer);
             finalHtml += html;
         }
 
