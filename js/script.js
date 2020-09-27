@@ -9,6 +9,8 @@
     /**genre links**/
     var allMoviesUrl = "data/";
     var genreMoviesHtml = "snippets/genre-movies-list.html";
+    /**movie links**/
+    var movieHeaderHtml = "snippets/movie-header2.html";
 
     // Convenience function for inserting innerHTML for 'select'
     var insertHtml = function (selector, html) {
@@ -42,8 +44,51 @@
     });
 
     cinephile.loadMoviePage = function(name,short_name,overview,trailer) {
-        oldHeader2Html = document.querySelector("h2").textContent;
+        var genre = document.querySelector("h2").textContent.split(' Movies')[0];
+        genre_short = getGenreShortName(genre);
+        console.log(genre_short);
+        $ajaxUtils.sendGetRequest(
+            movieHeaderHtml,
+            function (header_movies_html_response) {
+                var categoriesViewHtml =
+                    buildHeaderViewHtml(genre,
+                                        genre_short,
+                                        name,
+                                        header_movies_html_response);
+                insertHtml("#head2", categoriesViewHtml);
+            },
+            false);
     };
+
+    function getGenreShortName(genre_name){
+        var genre_short_name = genre_name.toLowerCase();
+        genre_short_name = insertProperty(genre_short_name,' ','_');
+        return genre_short_name;
+    }
+
+
+    function buildHeaderViewHtml(genre,
+                                  genre_short,
+                                  name,
+                                  header_movies_html_response) {
+
+        var finalHtml = '';
+
+        var html = header_movies_html_response; 
+        html =
+            insertProperty(html, "name", name);
+        html =
+            insertProperty(html,
+                           "genre_short",
+                           genre_short);
+        html =
+            insertProperty(html,
+                           "genre",
+                           genre);
+        finalHtml += html;
+
+        return finalHtml;
+    }
 
     // Load the menu categories view
     cinephile.loadGenreMovies= function (name, short_name) {
@@ -55,6 +100,7 @@
         $ajaxUtils.sendGetRequest(
             allMoviesUrl,
             buildAndShowCategoriesHTML);
+        allMoviesUrl="data/";
     };
     // Builds HTML for the categories page based on the data
     // from the server
