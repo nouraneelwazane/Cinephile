@@ -3,7 +3,6 @@
     var cinephile = {};
 
     /**home page links**/
-    var index_content_header = "snippets/index-header2.html";
     var index_movie_genres = "snippets/index-movie-genres.html";
     var movie_genres_url = "data/movie-genres.json";
     /**genre links**/
@@ -38,14 +37,14 @@
     document.addEventListener("DOMContentLoaded", function (event) {
 
         // On first load, show home view
-        header2Html = '<h2>Movie Genres</h2>';
+        var header2Html = '<h2>Movie Genres</h2>';
         insertHtml('#head2',header2Html);
         loadIndexCategories();
     });
 
     cinephile.loadMoviePage = function(name,short_name,overview,trailer) {
         var genre = document.querySelector("h2").textContent.split(' Movies')[0];
-        genre_short = getGenreShortName(genre);
+        var genre_short = getGenreShortName(genre);
         console.log(genre_short);
         $ajaxUtils.sendGetRequest(
             movieHeaderHtml,
@@ -92,7 +91,7 @@
 
     // Load the menu categories view
     cinephile.loadGenreMovies= function (name, short_name) {
-        header2Html = '<h2>'+ name +' Movies</h2>';
+        var header2Html = '<h2>'+ name +' Movies</h2>';
         insertHtml('#head2',header2Html);
         showLoading("#main-content-content");
         allMoviesUrl +=short_name;
