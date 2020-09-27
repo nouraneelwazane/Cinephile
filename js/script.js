@@ -10,6 +10,7 @@
     var genreMoviesHtml = "snippets/genre-movies-list.html";
     /**movie links**/
     var movieHeaderHtml = "snippets/movie-header2.html";
+    var moviePageHtml = "snippets/movie-code.html";
 
     // Convenience function for inserting innerHTML for 'select'
     var insertHtml = function (selector, html) {
@@ -45,19 +46,41 @@
     cinephile.loadMoviePage = function(name,short_name,overview,trailer) {
         var genre = document.querySelector("h2").textContent.split(' Movies')[0];
         var genre_short = getGenreShortName(genre);
-        console.log(genre_short);
         $ajaxUtils.sendGetRequest(
             movieHeaderHtml,
             function (header_movies_html_response) {
-                var categoriesViewHtml =
+                var categoriesHeaderViewHtml =
                     buildHeaderViewHtml(genre,
                                         genre_short,
                                         name,
                                         header_movies_html_response);
-                insertHtml("#head2", categoriesViewHtml);
+                insertHtml("#head2", categoriesHeaderViewHtml);
             },
             false);
+        buildContentViewHtml(name,short_name,overview,trailer);
+
     };
+
+    function buildContentViewHtml(name,short_name,overview,trailer){
+        showLoading("#main-content-content");
+        var categories = 
+            [ { "name":name,
+               "short_name":short_name,
+               "overview":overview,
+               "trailer":trailer
+
+              }];
+
+        $ajaxUtils.sendGetRequest(
+            moviePageHtml,
+            function (code_movies_html_response) {
+                var categoriesViewHtml =
+                    buildCategoriesViewHtml(categories,
+                                            code_movies_html_response);
+                insertHtml("#main-content-content", categoriesViewHtml);
+            },
+            false);
+    }
 
     function getGenreShortName(genre_name){
         var genre_short_name = genre_name.toLowerCase();
@@ -101,6 +124,7 @@
             buildAndShowCategoriesHTML);
         allMoviesUrl="data/";
     };
+
     // Builds HTML for the categories page based on the data
     // from the server
     function buildAndShowCategoriesHTML (categories) {
@@ -117,14 +141,12 @@
             false);
     }
 
-
     // Using categories data and snippets html
     // build categories view HTML to be inserted into page
     function buildCategoriesViewHtml(categories,
                                       genreMoviesHtml) {
 
         var finalHtml = '';
-
         // Loop over categories
         for (var i = 0; i < categories.length; i++) {
             // Insert category values
