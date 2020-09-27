@@ -7,9 +7,8 @@
     var index_movie_genres = "snippets/index-movie-genres.html";
     var movie_genres_url = "data/movie-genres.json";
     /**genre links**/
-    var allCategoriesUrl = "data/";
-    var categoryHtml = "snippets/genre-movies-list.html";
-    var categoriesTitleHtml = "snippets/genre-header2.html";
+    var allMoviesUrl = "data/";
+    var genreMoviesHtml = "snippets/genre-movies-list.html";
 
     // Convenience function for inserting innerHTML for 'select'
     var insertHtml = function (selector, html) {
@@ -42,15 +41,19 @@
         loadIndexCategories();
     });
 
+    cinephile.loadMoviePage = function(name,short_name,overview,trailer) {
+        oldHeader2Html = document.querySelector("h2").textContent;
+    };
+
     // Load the menu categories view
     cinephile.loadGenreMovies= function (name, short_name) {
         header2Html = '<h2>'+ name +' Movies</h2>';
         insertHtml('#head2',header2Html);
         showLoading("#main-content-content");
-        allCategoriesUrl +=short_name;
-        allCategoriesUrl +=".json"
+        allMoviesUrl +=short_name;
+        allMoviesUrl +=".json"
         $ajaxUtils.sendGetRequest(
-            allCategoriesUrl,
+            allMoviesUrl,
             buildAndShowCategoriesHTML);
     };
     // Builds HTML for the categories page based on the data
@@ -59,12 +62,11 @@
         // Load title snippet of categories page
         // Retrieve single category snippet
         $ajaxUtils.sendGetRequest(
-            categoryHtml,
-            function (categoryHtml) {
+            genreMoviesHtml,
+            function (genreMoviesHtml) {
                 var categoriesViewHtml =
                     buildCategoriesViewHtml(categories,
-                                            categoriesTitleHtml,
-                                            categoryHtml);
+                                            genreMoviesHtml);
                 insertHtml("#main-content-content", categoriesViewHtml);
             },
             false);
@@ -74,15 +76,14 @@
     // Using categories data and snippets html
     // build categories view HTML to be inserted into page
     function buildCategoriesViewHtml(categories,
-                                      categoriesTitleHtml,
-                                      categoryHtml) {
+                                      genreMoviesHtml) {
 
         var finalHtml = '';
 
         // Loop over categories
         for (var i = 0; i < categories.length; i++) {
             // Insert category values
-            var html = categoryHtml;
+            var html = genreMoviesHtml;
             var name = "" + categories[i].name;
             var short_name = categories[i].short_name;
             var overview = categories[i].overview;
