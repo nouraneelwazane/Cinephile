@@ -83,8 +83,8 @@
     }
 
     function getGenreShortName(genre_name){
-        var genre_short_name = genre_name.toLowerCase();
-        genre_short_name = insertProperty(genre_short_name,' ','_');
+        genre_name = genre_name.toLowerCase();
+        var genre_short_name = genre_name.replace(/\s/g,"_");
         return genre_short_name;
     }
 

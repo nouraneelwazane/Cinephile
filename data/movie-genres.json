@@ -9,6 +9,6 @@
     {"name":"Musical", "short_name":"musical"},
     {"name":"Horror", "short_name":"horror"},
     {"name":"Romance", "short_name":"romance"},
-    {"name":"Science Fiction", "short_name":"science-fiction"},
+    {"name":"Science Fiction", "short_name":"science_fiction"},
     {"name":"Thriller", "short_name":"thriller"}
 ]

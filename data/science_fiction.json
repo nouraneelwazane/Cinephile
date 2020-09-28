@@ -1,0 +1,20 @@
+[
+    {
+        "name":"Back To The Future",
+        "short_name":"back_to_the_future",
+        "overview":"Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.",
+        "trailer":"qvsgGtivCgs"
+    },
+    {
+        "name":"Avatar",
+        "short_name":"avatar",
+        "overview":"A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+        "trailer":"5PSNL1qE6VY"
+    },
+    {
+        "name":"The Stepford Wives",
+        "short_name":"the_stepford_wives",
+        "overview":"The secret to a Stepford wife lies behind the doors of the Men\\'s Association.",
+        "trailer":"oryni9OnbEM"
+    }
+]
