@@ -6,7 +6,7 @@
     {"name":"Documentary", "short_name":"documentary"},
     {"name":"Drama", "short_name":"drama"},
     {"name":"Fantasy", "short_name":"fantasy"},
-    {"name":"Film-Noir", "short_name":"film-noir"},
+    {"name":"Musical", "short_name":"musical"},
     {"name":"Horror", "short_name":"horror"},
     {"name":"Romance", "short_name":"romance"},
     {"name":"Science Fiction", "short_name":"science-fiction"},
