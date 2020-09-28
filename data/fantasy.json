@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Alice in Wonderland",
+        "short_name":"alice_in_wonderland",
+        "overview":"Nineteen-year-old Alice returns to the magical world from her childhood adventure, where she reunites with her old friends and learns of her true destiny: to end the Red Queen\\'s reign of terror.",
+        "trailer":"9POCgSRVvf0"
+    },
+    {
+        "name":"Charlie and the Chocolate Factory",
+        "short_name":"charlie_and_the_chocolate_factory",
+        "overview":"A young boy wins a tour through the most magnificent chocolate factory in the world, led by the world\\'s most unusual candy maker.",
+        "trailer":"p6JAQ2aoXm0"
+    },
+    {
+        "name":"Maleficent",
+        "short_name":"maleficent",
+        "overview":"A vengeful fairy is driven to curse an infant princess, only to discover that the child may be the one person who can restore peace to their troubled land.",
+        "trailer":"LaArkjF7AnM"
+    },
+    {
+        "name":"The Lion, the Witch and the Wardrobe",
+        "short_name":"the_lion,_the_witch_and_the_wardrobe",
+        "overview":"Four kids travel to the magical land of Narnia where they must battle an evil queen with the direction of the lion, Aslan.",
+        "trailer":"CHA8FWTGLFU"
+    }
+]
