@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Mean Girls",
+        "short_name":"mean_girls",
+        "overview":"Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyfriend of alpha Plastic Regina George.",
+        "trailer":"KAOmTMCtGkI"
+    },
+    {
+        "name":"Clueless",
+        "short_name":"clueless",
+        "overview":"Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school\\'s pecking scale. Seeing herself as a matchmaker, Cher first coaxes two teachers into dating each other.",
+        "trailer":"RS0KyTZ3Ie4"
+    },
+    {
+        "name":"Father of the Bride",
+        "short_name":"father_of_the_bride",
+        "overview":"With his oldest daughter\\'s wedding approaching, a father finds himself reluctant to let go.",
+        "trailer":"o-JEkllZPDE"
+    },
+    {
+        "name":"Cheaper by the dozen",
+        "short_name":"cheaper_by_the_dozen",
+        "overview":"With his wife doing a book tour, a father of twelve must handle a new job and his unstable brood.",
+        "trailer":"b44tHAFX8JQ"
+    },
+    {
+        "name":"Blended",
+        "short_name":"blended",
+        "overview":"After a bad blind date, a man and woman find themselves stuck together at a resort for families, where their attraction grows as their respective kids benefit from the burgeoning relationship.",
+        "trailer":"8MuWt2X59fo"
+    }
+]
