@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Anna Karenina",
+        "short_name":"anna_karenina",
+        "overview":"In late-19th-century Russian high society, St. Petersburg aristocrat Anna Karenina enters into a life-changing affair with the dashing Count Alexei Vronsky.",
+        "trailer":"Z-nyXX5zOLg"
+    },
+    {
+        "name":"The Aftermath",
+        "short_name":"the_aftermath",
+        "overview":"Post World War II, a British colonel and his wife are assigned to live in Hamburg during the post-war reconstruction, but tensions arise with the German who previously owned the house.",
+        "trailer":"FPv3e2FZOgo"
+    },
+    {
+        "name":"The Blind Side",
+        "short_name":"the_blind_side",
+        "overview":"The story of Michael Oher, a homeless and traumatized boy who became an All-American football player and first-round NFL draft pick with the help of a caring woman and her family.",
+        "trailer":"gvqj_Tk_kuM"
+    },
+    {
+        "name":"The Great Gatsby",
+        "short_name":"the_great_gatsby",
+        "overview":"A writer and wall street trader, Nick, finds himself drawn to the past and lifestyle of his millionaire neighbor, Jay Gatsby.",
+        "trailer":"rARN6agiW7o"
+    }
+]
